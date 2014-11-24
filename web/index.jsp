@@ -10,7 +10,8 @@
     <head>
         <meta charset="UTF-8">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <title>Megateub</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <title>Megacasting</title>
     </head>
     <body>
        <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
