@@ -40,7 +40,7 @@
           <a href="#">Castings</a>
         </li>
         <li class="active">
-          <a href="#">Connexion</a>
+          <a href="connexion.jsp">Connexion</a>
         </li>
       </ul>
     </nav>
