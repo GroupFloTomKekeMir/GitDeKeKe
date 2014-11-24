@@ -24,7 +24,7 @@
       </button>
       <a href="./" class="navbar-brand">MegaCasting</a>
     </div>
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+   <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav"> 
         <li>
           <a href="musiques.jsp">Musiques</a>
@@ -38,13 +38,13 @@
         <li class="active">
           <a href="spectacles.jsp">Spectacles</a>
         </li>
-        <li class="active">
+        <li>
           <a href="castings.jsp">Castings</a>
         </li>
         <li class="active">
           <a href="connexion.jsp">Connexion</a>
         </li>       
-        <li class="active">
+        <li>
           <a href="inscription.jsp">Inscription</a>
         </li>
       </ul>

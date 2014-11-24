@@ -39,13 +39,13 @@
         <li class="active">
           <a href="spectacles.jsp">Spectacles</a>
         </li>
-        <li class="active">
+        <li>
           <a href="castings.jsp">Castings</a>
         </li>
         <li class="active">
           <a href="connexion.jsp">Connexion</a>
         </li>       
-        <li class="active">
+        <li>
           <a href="inscription.jsp">Inscription</a>
         </li>
       </ul>
