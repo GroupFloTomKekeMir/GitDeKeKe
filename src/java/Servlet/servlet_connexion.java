@@ -5,8 +5,13 @@
  */
 package Servlet;
 
+import entites.Personne;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,6 +61,58 @@ public class servlet_connexion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        try {
+			Class.forName("com.mysql.jdbc.Driver");
+                        
+		}
+		
+		catch(ClassNotFoundException ex){
+			ex.printStackTrace();
+		}
+                
+		String url = "jdbc:mysql://localhost/test";
+		Connection cnx = null;
+		
+		try {			
+			cnx = DriverManager.getConnection(url, "root", "");
+			System.out.println("Connexion réussie !");
+                        
+             String mail = request.getParameter("mail");        
+               
+            dao.PersonneDAO personneDAO = new dao.PersonneDAO();
+            Personne personne = personneDAO.trouver(cnx,mail);
+            
+            if(personneDAO == null) {
+               PrintWriter out = response.getWriter();
+               out.println("NOK");
+               out.close();
+            } else {
+                
+                request.setAttribute("personne",personne ); // puissant
+
+             //  request.setAttribute("personnes",dao.PersonneDAO.(cnx));
+           
+                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                rd.forward(request, response);
+            }
+           
+                
+            }
+            catch (Exception ex) 
+            {
+                ex.printStackTrace();
+            }
+            finally{
+        
+        
+                    if(cnx != null){
+                            try{
+                                cnx.close();
+                               }
+                            catch(SQLException ex){  }   
+                    }
+           }
     }
 
     /**
