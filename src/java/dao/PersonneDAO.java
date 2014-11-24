@@ -18,7 +18,7 @@ public class PersonneDAO {
 	public static void creer(Connection cnx, Personne personne) throws Exception {
 		
 		Personne p = trouver(cnx, personne.getNom(), personne.getPrenom());
-		
+		//
 		if(p != null) {
 			throw new Exception(personne.getNom() + " " + personne.getPrenom() + " existe déjà !");
 		}
