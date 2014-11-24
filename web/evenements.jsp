@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 24 nov. 2014, 09:40:27
+    Document   : evenements
+    Created on : 24 nov. 2014, 10:31:22
     Author     : Kévin
 --%>
 
@@ -10,8 +10,7 @@
     <head>
         <meta charset="UTF-8">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
-        <title>Megacasting</title>
+        <title>Evènements</title>
     </head>
     <body>
        <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -52,9 +51,4 @@
     </nav>
   </div>
 </header>
-        
-        <footer class="row">
-            
-        </footer>
-    </body>
-</html>
+<!--------------------------------------------------HEADER--------------------------------------------------->      

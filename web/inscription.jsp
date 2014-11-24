@@ -1,6 +1,6 @@
 <%-- 
-    Document   : connexion
-    Created on : 24 nov. 2014, 09:41:28
+    Document   : inscription
+    Created on : 24 nov. 2014, 10:23:08
     Author     : Kévin
 --%>
 
@@ -10,7 +10,7 @@
     <head>
         <meta charset="UTF-8">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <title>MegaCasting</title>
+        <title>Inscription</title>
     </head>
     <body>
        <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -51,7 +51,8 @@
     </nav>
   </div>
 </header>
-<!--------------------------------------------------HEADER--------------------------------------------------->      
+        
+        <!--------------------------------------------------HEADER--------------------------------------------------->      
         
         
 <div class="contain" style="margin-top : 60px;">
@@ -62,7 +63,7 @@
             <div class="col-lg-5">
                 <div class="row">
                     <div class="col-lg-offset-10 col-lg-2">
-                        <h1> Connexion </h1>
+                        <h1> Inscription </h1>
                     </div>
                 </div>
              </div>
@@ -82,10 +83,21 @@
     <div class="row">
         <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 40px">			
             <div class="col-lg-1">
-                <label for = "password">Mot de passe  : </label>                                    
+                <label for = "password">Mot de passe : </label>                                    
              </div>
              <div class="col-lg-2">
                 <input name="password" id="password" type="password" />
+        </div>
+	</div>
+    </div>
+      
+    <div class="row">
+        <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 20px">			
+            <div class="col-lg-1">
+                <label for = "password">Confirmer : </label>                                    
+             </div>
+             <div class="col-lg-2">
+                <input name="password2" id="password" type="password" />
         </div>
 	</div>
     </div>
@@ -95,7 +107,6 @@
                 <input name="valider" id="valider" type="submit" />
 	</div>
     </div>
-
         
     </form>
         
