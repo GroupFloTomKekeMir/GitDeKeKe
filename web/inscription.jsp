@@ -72,7 +72,7 @@
         <div class="row">	
             <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 40px">
                 <div class="col-lg-1">
-                    <label for = "identifiant">Pseudo : </label>
+                    <label for = "identifiant">Login : </label>
                 </div>
                 <div class="col-lg-2">
                     <input name="identifiant" id="identifiant" type="text" />
@@ -94,13 +94,101 @@
     <div class="row">
         <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 20px">			
             <div class="col-lg-1">
-                <label for = "password">Confirmer : </label>                                    
+                <label for = "password2">Confirmer : </label>                                    
              </div>
              <div class="col-lg-2">
                 <input name="password2" id="password" type="password" />
         </div>
 	</div>
     </div>
+        
+    <div class="row">	
+            <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 40px">
+                <div class="col-lg-1">
+                    <label for = "nom">Nom : </label>
+                </div>
+                <div class="col-lg-2">
+                    <input name="nom" id="nom" type="text" />
+                </div>			
+            </div>
+    </div>
+        
+        <div class="row">	
+            <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 40px">
+                <div class="col-lg-1">
+                    <label for = "prenom">Prénom : </label>
+                </div>
+                <div class="col-lg-2">
+                    <input name="prenom" id="prenom" type="text" />
+                </div>			
+            </div>
+        </div>
+        
+    <div class="row">	
+            <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 40px">
+                <div class="col-lg-1">
+                    <label for = "age">Age : </label>
+                </div>
+                <div class="col-lg-2">
+                    <input name="age" id="age" type="text" />
+                </div>			
+            </div>
+    </div>
+        
+    <div class="row">	
+            <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 40px">
+                <div class="col-lg-1">
+                    <label for = "email">Adresse e-mail : </label>
+                </div>
+                <div class="col-lg-2">
+                    <input name="email" id="email" type="text" />
+                </div>			
+            </div>
+    </div>  
+        
+    <div class="row">	
+            <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 40px">
+                <div class="col-lg-1">
+                    <label for = "telephone">Téléphone : </label>
+                </div>
+                <div class="col-lg-2">
+                    <input name="telephone" id="telephone" type="text" />
+                </div>			
+            </div>
+    </div>    
+     
+    <div class="row">	
+            <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 40px">
+                <div class="col-lg-1">
+                    <label for = "adresse">Adresse : </label>
+                </div>
+                <div class="col-lg-2">
+                    <input name="adresse" id="adresse" type="text" />
+                </div>			
+            </div>
+    </div>
+        
+    <div class="row">	
+            <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 40px">
+                <div class="col-lg-1">
+                    <label for = "description">Description : </label>
+                </div>
+                <div class="col-lg-2">
+                    <input name="description" id="description" type="text" />
+                </div>			
+            </div>
+    </div>  
+        
+    <div class="row">	
+            <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 40px">
+                <div class="col-lg-1">
+                    <label for = "media">Photo de profil : </label>
+                </div>
+                <div class="col-lg-2">
+                    <input name="media" id="media" type="button" Parcourir />
+                </div>			
+            </div>
+    </div>    
         
     <div class="row">
         <div class="col-lg-offset-5">			

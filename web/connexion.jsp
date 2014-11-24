@@ -71,7 +71,7 @@
         <div class="row">	
             <div class="col-lg-offset-4 col-lg-9" style ="margin-bottom: 40px">
                 <div class="col-lg-1">
-                    <label for = "identifiant">Pseudo : </label>
+                    <label for = "identifiant">Email : </label>
                 </div>
                 <div class="col-lg-2">
                     <input name="identifiant" id="identifiant" type="text" />
