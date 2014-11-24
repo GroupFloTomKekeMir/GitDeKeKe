@@ -4,6 +4,7 @@
 
 package dao;
 
+import entites.Adresse;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,23 +18,28 @@ public class PersonneDAO {
 	
 	public static void creer(Connection cnx, Personne personne) throws Exception {
 		
-		Personne p = trouver(cnx, personne.getNom(), personne.getPrenom());
+		Personne p = trouver(cnx, personne.getMail());
 		//
 		if(p != null) {
-			throw new Exception(personne.getNom() + " " + personne.getPrenom() + " existe déjà !");
+			throw new Exception(personne.getLogin() + " " + personne.getPassword()+ " existe déjà !");
 		}
 		
 		Statement stmt = null;
 		
 		try {
 			stmt = cnx.createStatement();
-			stmt.executeUpdate("INSERT INTO PERSONNE (NOM, PRENOM, AGE, ID_ADR) "
-					+ " VALUES ('" + personne.getNom()
-					+ "', '" + personne.getPrenom()
-					+ "', " + personne.getAge()
+			stmt.executeUpdate("INSERT INTO Utilisateur (login, password, nom, prenom,age,mail,telephone,adr) "
+					+ " VALUES ('" + personne.getLogin()
+					+ "', '" + personne.getPassword()
+					+ "', " + personne.getNom()
+                                        + "', " + personne.getPrenom()
+                                        + "', " + personne.getAge()
+                                        + "', " + personne.getMail()
+                                        + "', " + personne.getTelephone()
+                                        + "', " + personne.getAdr()
 					+ ")");
 
-			ResultSet rs = stmt.executeQuery("SELECT MAX(ID) FROM PERSONNE");
+			ResultSet rs = stmt.executeQuery("SELECT MAX(ID) FROM Utilisateur");
 			
 			if(rs.next()) {
 				int id = rs.getInt(1);
@@ -60,11 +66,11 @@ public class PersonneDAO {
 
 	public static void modifier(Connection cnx, Personne personne) {
 		
-		Personne p = trouver(cnx, personne.getNom(), personne.getPrenom());
+		Personne p = trouver(cnx, personne.getMail());
 		
 		if(p != null) {
 			try {
-				throw new Exception(personne.getNom() + " " + personne.getPrenom() + " existe déjà !");
+				throw new Exception(personne.getLogin()+ " " + personne.getPassword()+ " existe déjà !");
 			} catch (Exception e) {
 				
 				e.printStackTrace();
@@ -76,10 +82,15 @@ public class PersonneDAO {
 		
 		try {
 			stmt = cnx.createStatement();	
-			stmt.executeUpdate("UPDATE PERSONNE SET"
-					+ " NOM = '" + personne.getNom() + "'"
+			stmt.executeUpdate("UPDATE Utilisateur SET"
+                                        + "Login = '"+ personne.getLogin() + "'"
+                                        + ", password = '"+ personne.getPassword()+ "'"
+					+ ", NOM = '" + personne.getNom() + "'"
 					+ ", PRENOM = '" + personne.getPrenom() + "'"
 					+ ", AGE = '" + personne.getAge() + "'"
+                                        + ", mail = '" + personne.getMail() + "'"
+                                        + ", telephone= '" + personne.getTelephone() + "'"
+                                        + "', adr = '" + personne.getAdr() + "'"
 					+ " WHERE ID = " + personne.getId());
 			
 		} catch (Exception ex) {
@@ -105,9 +116,9 @@ public class PersonneDAO {
     	  
 	   try {
 			stmt = cnx.createStatement();
-			stmt.executeUpdate("DELETE FROM PERSONNE WHERE ID = " + personne.getId());
+			stmt.executeUpdate("DELETE FROM Utilisateur WHERE ID = " + personne.getId());
 			
-			ResultSet rs = stmt.executeQuery("SELECT MAX(ID) FROM PERSONNE");
+			ResultSet rs = stmt.executeQuery("SELECT MAX(ID) FROM Utilisateur");
 			
 						
 		} catch (Exception ex) {
@@ -130,7 +141,7 @@ public class PersonneDAO {
     }
     
     
-    public static Personne trouver(Connection cnx, String nom, String prenom) {
+    public static Personne trouver(Connection cnx, String mail) {
     	
     	Personne personne = null;
     	Statement stmt = null;
@@ -139,16 +150,22 @@ public class PersonneDAO {
    		
     		stmt = cnx.createStatement();
     		
-    		ResultSet rs = stmt.executeQuery("SELECT ID, AGE, ID_ADR FROM PERSONNE WHERE NOM = '" + nom + "'AND PRENOM = '" + prenom + "'");
+    		ResultSet rs = stmt.executeQuery("SELECT id,login,password,nom,prenom,age,mail,telephone,adr FROM Utilisateur WHERE mail = '" + mail);
     		
     		if (rs.next()) {
-    			
-    			int id = rs.getInt("ID");
+                        int idAdr = rs.getInt("id_adr");
+                    
+    			int id = rs.getInt("Id");
+                        String login = rs.getNString("login");
+                        String password = rs.getNString("password");
+                        String nom = rs.getNString("nom");
+                        String prenom = rs.getNString("prenom");                    
+                        String telephone = rs.getNString("telephone");
     			int age = rs.getInt("AGE");
-       			int id_adr = rs.getInt("ID_ADR");
+       			Adresse adr = AdresseDAO.trouver(cnx, idAdr);
     			
     			
-    			personne = new Personne(nom, prenom, age);
+    			personne = new Personne(nom,prenom,age,login,password,mail,telephone,adr);
     			personne.setAge(age);
     			personne.setId(id);
     			
