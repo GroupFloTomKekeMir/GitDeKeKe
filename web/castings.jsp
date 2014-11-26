@@ -54,42 +54,87 @@
 <!--------------------------------------------------HEADER--------------------------------------------------->
         
 <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img data-src="holder.js/300x300" alt="...">
+  <div class="col-lg-offset-3 col-lg-2" style ="margin-top: 150px">
+    <div class="thumbnail" class ="col-lg-3">
+      <img data-src="holder.js/300x300" >
       <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <h3>Musiciens</h3>
+        <p>Découvrez toutes les annonces pour les musiciens</p>
+        <p>Il y a [x] annonces</p>
+        <form method="POST" action="servlet_musicien">
+        <p><input type="submit" id="submit">En savoir plus</p>
+        </form>
       </div>
     </div>
   </div>
+
+
+  <div class="col-lg-2" style ="margin-top: 150px">
+    <div class="thumbnail">
+      <img data-src="holder.js/300x300" >
+      <div class="caption">
+        <h3>Danseurs</h3>
+        <p>Découvrez toutes les annonces pour les danseurs</p>
+        <p>Il y a [x] annonces</p>
+        <p><a href="#" class="btn btn-primary" role="button">En savoir plus</a></p>
+      </div>
+    </div>
+  </div>
+    
+    <div class=" col-lg-2" style ="margin-top: 150px">
+    <div class="thumbnail">
+      <img data-src="holder.js/300x300" >
+      <div class="caption">
+        <h3>Chorégraphes</h3>
+        <p>Découvrez toutes les annonces pour les chorégraphes</p>
+        <p>Il y a [x] annonces</p>
+        <p><a href="#" class="btn btn-primary" role="button">En savoir plus</a></p>
+      </div>
+    </div>
+  </div> 
+    
 </div>
 
 
-
-<h1> Bonjour </h1>
-<h1> Bonjour </h1>
-<h1> Bonjour </h1>
-<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
-<h1> Bonjour </h1>
-<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
-<h1> Bonjour </h1><h1> Bonjour </h1>
-<h1> Bonjour </h1>
-<h1> Bonjour </h1>
-<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
-<h1> Bonjour </h1>
-<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
-<h1> Bonjour </h1><h1> Bonjour </h1>
-<h1> Bonjour </h1>
-<h1> Bonjour </h1>
-<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
-<h1> Bonjour </h1>
-<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
-<h1> Bonjour </h1>
+<div class="row">
+  <div class="col-lg-offset-3 col-lg-2" style ="margin-top: 80px">
+    <div class="thumbnail" class ="col-lg-3">
+      <img data-src="holder.js/300x300" >
+      <div class="caption">
+        <h3>Compositeurs</h3>
+        <p>Découvrez toutes les annonces pour les compositeurs</p>
+        <p>Il y a [x] annonces</p>
+        <p><a href="#" class="btn btn-primary" role="button">En savoir plus</a></p>
+      </div>
+    </div>
+  </div>
 
 
-
+  <div class="col-lg-2" style ="margin-top: 80px">
+    <div class="thumbnail">
+      <img data-src="holder.js/300x300" >
+      <div class="caption">
+        <h3>Réalisateurs</h3>
+        <p>Découvrez toutes les annonces pour les réalisateurs</p>
+        <p>Il y a [x] annonces</p>
+        <p><a href="#" class="btn btn-primary" role="button">En savoir plus</a></p>
+      </div>
+    </div>
+  </div>
+    
+    <div class=" col-lg-2" style ="margin-top: 80px">
+    <div class="thumbnail">
+      <img data-src="holder.js/300x300" >
+      <div class="caption">
+        <h3>Photographes</h3>
+        <p>Découvrez toutes les annonces pour les photographes</p>
+        <p>Il y a [x] annonces</p>
+        <p><a href="#" class="btn btn-primary" role="button">En savoir plus</a></p>
+      </div>
+    </div>
+  </div> 
+    
+</div>
 
 
 
