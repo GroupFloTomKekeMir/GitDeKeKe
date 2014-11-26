@@ -82,7 +82,7 @@ public class servlet_connexion extends HttpServlet {
                
             dao.PersonneDAO personneDAO = new dao.PersonneDAO();
             Personne personne = personneDAO.trouver(cnx,mail);
-            
+            //
             if(personneDAO == null) {
                PrintWriter out = response.getWriter();
                out.println("NOK");
