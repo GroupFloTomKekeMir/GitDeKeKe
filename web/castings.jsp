@@ -27,7 +27,7 @@
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav"> 
         <li>
-          <a href="musiques.jsp">Musiques</a>
+          <a href="musiques.jsp">Musiquess</a>
         </li>
         <li class="active">
           <a href="evenements.jsp">Evènements</a>
