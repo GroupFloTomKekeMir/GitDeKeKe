@@ -52,3 +52,66 @@
   </div>
 </header>
 <!--------------------------------------------------HEADER--------------------------------------------------->
+        
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img data-src="holder.js/300x300" alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<h1> Bonjour </h1>
+<h1> Bonjour </h1>
+<h1> Bonjour </h1>
+<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
+<h1> Bonjour </h1>
+<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
+<h1> Bonjour </h1><h1> Bonjour </h1>
+<h1> Bonjour </h1>
+<h1> Bonjour </h1>
+<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
+<h1> Bonjour </h1>
+<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
+<h1> Bonjour </h1><h1> Bonjour </h1>
+<h1> Bonjour </h1>
+<h1> Bonjour </h1>
+<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
+<h1> Bonjour </h1>
+<h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1><h1> Bonjour </h1>
+<h1> Bonjour </h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--------------------------------------------------FOOTER--------------------------------------------------->
+        <footer class="row">
+            
+        </footer>
+    </body>
+</html>
