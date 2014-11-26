@@ -90,7 +90,7 @@ public class servlet_connexion extends HttpServlet {
             } else {
                 
                 request.setAttribute("personne",personne ); // puissant
-
+//
              //  request.setAttribute("personnes",dao.PersonneDAO.(cnx));
            
                 RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
