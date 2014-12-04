@@ -5,20 +5,21 @@
  */
 package entites;
 
+import java.util.Date;
 import java.util.Objects;
 
 /**
  *
  * @author Enzo
  */
-public class Diffuseur {
+public class Evenement {
     private int id;
     private String nom;
-    private String mail;
-    private String numeroTel;    
+    private String description;
+    private Date date;
     private Adresse Adresse;
+    private Annonceur Annonceur;
     private Media Media;
-
 
     public int getId() {
         return id;
@@ -35,48 +36,47 @@ public class Diffuseur {
     public void setNom(String nom) {
         this.nom = nom;
     }
-
-    public String getMail() {
-        return mail;
+    
+    public String getDescription() {
+        return description;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getNumeroTel() {
-        return numeroTel;
+    public Date getDate() {
+        return date;
     }
 
-    public void setNumeroTel(String numeroTel) {
-        this.numeroTel = numeroTel;
+    public void setDate(Date date) {
+        this.date = date;
     }
     
     public Adresse getAdresse() {
         return Adresse;
     }
 
-    public void setAdresse(Adresse Adresse) {
+    public void setAnnonceur(Adresse Adresse) {
         this.Adresse = Adresse;
     }
 
-    public Media getMedia() {
-        return Media;
+    public Annonceur getAnnonceur() {
+        return Annonceur;
     }
 
-    public void setMedia(Media Media) {
-        this.Media = Media;
+    public void setAnnonceur(Annonceur Annonceur) {
+        this.Annonceur = Annonceur;
     }
 
-    public Diffuseur(int id, String nom, String mail, String numeroTel, Adresse Adresse, Media Media) {
-        this.id = id;
+    public Evenement(String nom, String description, Date date, Adresse Adresse, Annonceur Annonceur) {
         this.nom = nom;
-        this.mail = mail;
-        this.numeroTel = numeroTel;
+        this.description = description;
+        this.date = date;
         this.Adresse = Adresse;
-        this.Media = Media;
+        this.Annonceur = Annonceur;
     }
-
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -85,14 +85,20 @@ public class Diffuseur {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Diffuseur other = (Diffuseur) obj;
+        final Evenement other = (Evenement) obj;
         if (!Objects.equals(this.nom, other.nom)) {
             return false;
         }
-        if (!Objects.equals(this.mail, other.mail)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (this.numeroTel != other.numeroTel) {
+        if (!Objects.equals(this.date, other.date)) {
+            return false;
+        }
+        if (!Objects.equals(this.Adresse, other.Adresse)) {
+            return false;
+        }
+        if (!Objects.equals(this.Annonceur, other.Annonceur)) {
             return false;
         }
         return true;
