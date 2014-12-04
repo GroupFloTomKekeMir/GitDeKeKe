@@ -56,7 +56,7 @@
         
 <div class="contain" style="margin-top : 60px;">
     
-    <form method="POST" action="">
+    <form method="POST" action="servlet_connexion">
 
         <div class="row" style ="margin-bottom: 70px; margin-top: 150px; margin-left: 100px; ">
             <div class="col-lg-5">

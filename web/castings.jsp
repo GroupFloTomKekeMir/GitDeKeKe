@@ -22,10 +22,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+        <ul
       <a href="./" class="navbar-brand">MegaCasting</a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav"> 
+      <ul class="nav navbar-nav navbar-right"> 
         <li>
           <a href="musiques.jsp">Musiquess</a>
         </li>
@@ -61,7 +62,7 @@
         <h3>Musiciens</h3>
         <p>Découvrez toutes les annonces pour les musiciens</p>
         <p>Il y a [x] annonces</p>
-        <form method="POST" action="servlet_musicien">
+        <form method="POST" action="servlet_musiciens">
         <p><input type="submit" id="submit">En savoir plus</p>
         </form>
       </div>

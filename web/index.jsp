@@ -4,6 +4,7 @@
     Author     : Kévin
 --%>
 
+<%@page import="entites.Utilisateur"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -189,7 +190,6 @@
         </div>
     </div>
 </div>     
-
 
 <!-------------------------------------------------------------------------->
 

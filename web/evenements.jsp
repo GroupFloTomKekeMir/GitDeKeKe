@@ -52,3 +52,13 @@
   </div>
 </header>
 <!--------------------------------------------------HEADER--------------------------------------------------->      
+<div class="row">
+<div class="col-lg-offset-4 col-lg-5" style="margin-top: 150px">
+
+<!--Ceci est un test -->
+<h1> Bonjour votre identifiant et votre mot de passe sont :  <%= session.getAttribute(mail) + session.getAttribute(password) %> </h1>
+  
+</div>
+</div>
+    </body>
+</html>

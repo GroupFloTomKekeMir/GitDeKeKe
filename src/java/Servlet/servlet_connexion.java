@@ -5,7 +5,7 @@
  */
 package Servlet;
 
-import entites.Personne;
+import entites.Utilisateur;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -17,6 +17,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.apache.openejb.server.httpd.HttpRequest;
 
 /**
  *
@@ -48,6 +50,8 @@ public class servlet_connexion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
     }
 
     /**
@@ -78,23 +82,28 @@ public class servlet_connexion extends HttpServlet {
 			cnx = DriverManager.getConnection(url, "root", "");
 			System.out.println("Connexion réussie !");
                         
-             String mail = request.getParameter("mail");        
-               
-            dao.PersonneDAO personneDAO = new dao.PersonneDAO();
-            Personne personne = personneDAO.trouver(cnx,mail);
+             String mail = request.getParameter("identifiant");  // on récupérer  le champ "identifiant" de l'utilisateur      
+             String password = request.getParameter("password"); // on récupère le champ "password" de l'utilisateur
+             
+            dao.UtilisateurDAO utilisateurDAO = new dao.UtilisateurDAO();
+            Utilisateur utilisateur = utilisateurDAO.trouverParMail(cnx,mail); // On recherche l'utilisateur en fonction de son mail
             //
-            if(personneDAO == null) {
+            if(utilisateurDAO == null) { // s'il n'existe pas
                PrintWriter out = response.getWriter();
                out.println("NOK");
                out.close();
-            } else {
+            } else {   // s'il existe
                 
-                request.setAttribute("personne",personne ); // puissant
+             
+              HttpSession session = request.getSession(); // On créer la session
+            
 
-             //  request.setAttribute("personnes",dao.PersonneDAO.(cnx));
+              
+                       
+              session.setAttribute("mail", mail); // on enregistre dans la session le mail de l'utilisateur
+              session.setAttribute("password", password); // on enregistre dans la session le mot de passe de l'utilisateur
            
-                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-                rd.forward(request, response);
+                response.sendRedirect("evenements.jsp"); // une fois la connexion effectué et la session créé on le redirige vers la page evenement
             }
            
                 

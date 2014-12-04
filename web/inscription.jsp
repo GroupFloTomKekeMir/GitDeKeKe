@@ -236,10 +236,7 @@
 <footer> 
 <div id="footer">
     <div class ="container">
-        <div class="row">
-            hello
-            
-        </div>
+
     </div>    
 </div> 
 </footer>

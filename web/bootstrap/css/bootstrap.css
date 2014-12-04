@@ -3771,6 +3771,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+    margin-left: 200px;
+	  margin-right: 200px;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -3967,7 +3969,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     padding-bottom: 15px;
   }
   .navbar-nav.navbar-right:last-child {
-    margin-right: -15px;
+    margin-right: 200px;
   }
 }
 @media (min-width: 768px) {
