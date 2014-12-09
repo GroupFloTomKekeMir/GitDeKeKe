@@ -57,33 +57,33 @@
 </header>
 <!--------------------------------------------------HEADER--------------------------------------------------->
 
-<div style ="margin-top:  150px">
-        <li><a href="#">Amis <span>340</span></a>
-            <ul>
-                     <li>
-                    <% 
-                        Offre offre = (Offre) request.getAttribute("offre");                      
-                       Collection<Offre> offres = (Collection<Offre>) request.getAttribute("offres");     
-                     %>
-                </li>
-<h2>Liste des offres :</h2>
-        <ul>
+<div style="margin-top: 150px">
+
+    
+    
+            <%
+         String var ="Bonjour tout le monde !"; 
+         Collection<Offre> offres = (Collection<Offre>) request.getAttribute("offres");
+         
+        %>
+        
+<%= var %>
+
+        <h2>Liste des offres :</h2>
+        
         <% 
         
         for(Offre o : offres) {
         %>
         
-        <li> <%= "Offre : " + o.getTitre()  %></li>
+        <li> <%= o.getTitre() %> <%= var %></li>
 
         <% 
         }
         %>
-        </ul>  
-
-            </ul>
-        </li>
-
+          
 </div>
+
 <!--------------------------------------------------FOOTER--------------------------------------------------->
         <footer class="row">
             

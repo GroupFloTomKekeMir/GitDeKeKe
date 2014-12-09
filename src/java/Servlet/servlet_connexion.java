@@ -5,6 +5,7 @@
  */
 package Servlet;
 
+import dao.UtilisateurDAO;
 import entites.Utilisateur;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -75,23 +76,21 @@ public class servlet_connexion extends HttpServlet {
 			ex.printStackTrace();
 		}
                 
-		String url = "jdbc:mysql://localhost/test";
+		String url = "jdbc:mysql://localhost/megacasting";
 		Connection cnx = null;
 		
 		try {			
 			cnx = DriverManager.getConnection(url, "root", "");
 			System.out.println("Connexion réussie !");
                         
-             String mail = request.getParameter("identifiant");  // on récupérer  le champ "identifiant" de l'utilisateur      
+             String login = request.getParameter("identifiant");  // on récupérer  le champ "identifiant" de l'utilisateur      
              String password = request.getParameter("password"); // on récupère le champ "password" de l'utilisateur
              
-            dao.UtilisateurDAO utilisateurDAO = new dao.UtilisateurDAO();
-            Utilisateur utilisateur = utilisateurDAO.trouverParMail(cnx,mail); // On recherche l'utilisateur en fonction de son mail
+            //dao.UtilisateurDAO utilisateurDAO = new dao.UtilisateurDAO();
+            Utilisateur utilisateur = UtilisateurDAO.trouverParMailEtMDP(cnx,login,password); // On recherche l'utilisateur en fonction de son mail
             //
-            if(utilisateurDAO == null) { // s'il n'existe pas
-               PrintWriter out = response.getWriter();
-               out.println("NOK");
-               out.close();
+            if(utilisateur == null) { // s'il n'existe pas
+                response.sendRedirect("connexion.jsp");
             } else {   // s'il existe
                 
              
@@ -100,7 +99,7 @@ public class servlet_connexion extends HttpServlet {
 
               
                        
-              session.setAttribute("mail", mail); // on enregistre dans la session le mail de l'utilisateur
+              session.setAttribute("login", login); // on enregistre dans la session le mail de l'utilisateur
               session.setAttribute("password", password); // on enregistre dans la session le mot de passe de l'utilisateur
            
                 response.sendRedirect("evenements.jsp"); // une fois la connexion effectué et la session créé on le redirige vers la page evenement

@@ -163,6 +163,7 @@ public class OffreDAO {
         return offre;
     }
     
+    
     public static void modifier(Connection cnx, Offre offre) throws Exception {
         Offre o = trouver(cnx, offre.getId());
 
@@ -268,4 +269,58 @@ public class OffreDAO {
         }
         return liste;
     }
+    
+        public static ArrayList<Offre> listerParMetier(Connection cnx,int id_metier){
+
+        ArrayList<Offre> liste = new ArrayList<>();
+
+        Statement stmt = null;
+        try{			
+            stmt = cnx.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT id_offre, titre, reference, date_debut_publi, fin_publi, nbr_poste, descr_poste, descr_profil, duree_contrat, id_contrat, id_annonceur, id_diffuseur, id_metier "
+                    + "From offre WHERE id_metier = '" + id_metier + "';");
+            while(rs.next()){
+                int id = rs.getInt("id_offre");
+                String titre = rs.getString("titre");
+                String reference = rs.getString("reference");
+                Date dateDebutPubli = rs.getDate("date_debut_publi");
+                Date dateFinPubli = rs.getDate("fin_publi");
+                int nbrPoste = rs.getInt("nbr_poste");               
+                String descrPoste = rs.getString("descr_poste");
+                String descrProfil = rs.getString("descr_profil");
+                int dureeContrat = rs.getInt("duree_contrat");
+               
+                String libelleContrat = rs.getString("c.libelle");
+                String libelleMetier = rs.getString("m.libelle");
+                String nomAnnonceur = rs.getString("a.nom");              
+                String nomDiffuseur = rs.getString("d.nom");              
+
+
+                Contrat contrat = ContratDAO.trouver(cnx, libelleContrat);
+                Metier metier = MetierDAO.trouver(cnx, libelleMetier);
+                Annonceur annonceur = AnnonceursDAO.trouver(cnx, nomAnnonceur);
+                Diffuseur diffuseur = DiffuseursDAO.trouver(cnx, nomDiffuseur);
+
+                Offre offre = new Offre(titre, reference, dateDebutPubli, dateFinPubli, nbrPoste, descrPoste, descrProfil, nbrPoste, contrat, annonceur, diffuseur, metier);
+                offre.setId(id);
+
+                liste.add(offre);				
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+            System.out.println("Echec lister musique");
+        }finally{
+            if(stmt != null){
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return liste;
+    }
+    
+    
+    
 }

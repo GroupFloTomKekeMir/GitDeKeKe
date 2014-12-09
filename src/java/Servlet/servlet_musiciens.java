@@ -5,6 +5,8 @@
  */
 package Servlet;
 
+import dao.OffreDAO;
+import dao.UtilisateurDAO;
 import entites.Offre;
 import entites.Utilisateur;
 import java.io.IOException;
@@ -12,6 +14,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -63,23 +66,19 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			ex.printStackTrace();
 		}
                 
-		String url = "jdbc:mysql://localhost/megacastings";
+		String url = "jdbc:mysql://localhost/megacasting";
 		Connection cnx = null;
-		
+		int id_metier = 1;
 		try {			
 			cnx = DriverManager.getConnection(url, "root", "");
 			System.out.println("Connexion réussie !");
-                        
-                    dao.OffreDAO offreDAO = new dao.OffreDAO();
-                     Offre offre = offreDAO.trouver(cnx, url);
-             
-                    request.setAttribute("o",offre ); // puissant
-                        
-                        
-                RequestDispatcher rd = request.getRequestDispatcher("Musicien.jsp");
-                rd.forward(request, response);
+                            
+
+           // ArrayList<Offre> offres = OffreDAO.listerParMetier(cnx, id_metier);
+            request.setAttribute("offres",OffreDAO.listerParMetier(cnx, id_metier));
             
-           
+            RequestDispatcher rd = request.getRequestDispatcher("Musicien.jsp");
+            rd.forward(request, response);
                 
             }
             catch (Exception ex) 

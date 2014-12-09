@@ -56,28 +56,27 @@ public class UtilisateurDAO {
         return utilisateur;
     }
     
-    public static Utilisateur trouverParMail(Connection cnx, String mail){
+    public static Utilisateur trouverParMailEtMDP(Connection cnx, String login, String password){
         Utilisateur utilisateur = null;
         Statement stmt = null;
         try{			
             stmt = cnx.createStatement();
-            ResultSet rs = stmt.executeQuery("Select nom, prenom, nom_artiste age, mail, telephone, id_adresse, descr_util From utilisateur WHERE mail = '" + mail + "';");
+            String query = "Select login, password , nom, prenom, nom_artiste, age, mail, telephone, id_adresse, descr_util From utilisateur WHERE login ='" + login + "'AND password ='" + password + "';";
+            ResultSet rs = stmt.executeQuery(query);
             if(rs.next()){
-                int idAdr = rs.getInt("idAdr");
+                int idAdr = rs.getInt("id_adresse");
 
                 Adresse adresse = AdresseDAO.trouver(cnx , idAdr);
-                String login = rs.getString("login");
-                String password = rs.getString("password");
+                String mail = rs.getString("mail");
                 String nom = rs.getString("nom");
                 String prenom = rs.getString("prenom");
                 String nom_artiste = rs.getString("nom_artiste");
                 String telephone = rs.getString("telephone");
                 String descr_util = rs.getString("descr_util");
                 int age = rs.getInt("age");
-                int id = rs.getInt("id");
+                
 
                 utilisateur = new Utilisateur(login, password, nom, prenom, nom_artiste, age, mail, telephone, adresse, descr_util);
-                utilisateur.setId(id);
             }	
         }
         catch(Exception ex){

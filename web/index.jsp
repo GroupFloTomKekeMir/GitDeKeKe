@@ -8,6 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <div id="moncadre2" class="col-lg-offset-2 col-lg-8">
     <head>
         <meta charset="UTF-8">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -27,7 +28,7 @@
       <a href="./" class="navbar-brand">MegaCasting</a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav navbar-right"> 
+      <ul class="nav navbar-nav"> 
         <li>
           <a href="musiques.jsp">Musiques</a>
         </li>
@@ -57,7 +58,7 @@
  
 
 <div class="row" style="margin-top: 150px;">  
-    <div id="moncadre" class="col-lg-offset-3 col-lg-6">
+    <div id="moncadre" class="col-lg-offset-2 col-lg-8">
             <h1 id="titre"> Musiques</h1>
         <div class="col-lg-4">
             <div class="thumbnail" id="ok">
@@ -102,7 +103,7 @@
 <!-------------------------------------------------------------------------->
 
 <div class="row" style="margin-top: 150px;">  
-    <div id="moncadre" class="col-lg-offset-3 col-lg-6">
+    <div id="moncadre" class="col-lg-offset-2 col-lg-8">
             <h1 id="titre"> Castings</h1>
         <div class="col-lg-4">
             <div class="thumbnail" id="ok">
@@ -148,7 +149,7 @@
 <!-------------------------------------------------------------------------->
 
 <div class="row" style="margin-top: 150px;">  
-    <div id="moncadre" class="col-lg-offset-3 col-lg-6">
+    <div id="moncadre" class="col-lg-offset-2 col-lg-8">
             <h1 id="titre"> Évenements</h1>
         <div class="col-lg-4">
             <div class="thumbnail" id="ok">
@@ -194,7 +195,7 @@
 <!-------------------------------------------------------------------------->
 
 <div class="row" style="margin-top: 150px;">  
-    <div id="moncadre" class="col-lg-offset-3 col-lg-6">
+    <div id="moncadre" class="col-lg-offset-2 col-lg-8">
             <h1 id="titre"> Spectacles</h1>
         <div class="col-lg-4">
             <div class="thumbnail" id="ok">
@@ -245,4 +246,5 @@
 
         </footer>
     </body>
+    </div>
 </html>

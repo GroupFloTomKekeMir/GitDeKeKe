@@ -46,6 +46,19 @@ footer {
         -moz-border-radius:5px;
 
         }
+        
+        
+#moncadre2 {
+      //  width:800px;
+      //  margin:0 auto;
+        padding:10px;
+        border:3px solid #DDD;
+        border-top-color: blue;
+        border-radius:5px;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        background-color: #FFFFFF;
+        }
 
         
         #recherche {
@@ -55,4 +68,9 @@ footer {
 
 footer {
 	background : #333;
+}
+
+
+body {
+    background-color: #DDD;
 }
