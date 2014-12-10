@@ -10,6 +10,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+     <div id="moncadre2" class="col-lg-offset-2 col-lg-8" style="height: 979px;">
     <head>
         <meta charset="UTF-8">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -17,76 +18,42 @@
         <title>Castings</title>
     </head>
     <body>
-       <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="./" class="navbar-brand">MegaCasting</a>
-    </div>
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav"> 
-        <li>
-          <a href="musiques.jsp">Musiquess</a>
-        </li>
-        <li class="active">
-          <a href="evenements.jsp">Evènements</a>
-        </li>
-        <li>
-          <a href="boutique.jsp">Boutique</a>
-        </li>
-        <li class="active">
-          <a href="spectacles.jsp">Spectacles</a>
-        </li>
-        <li>
-          <a href="castings.jsp">Castings</a>
-        </li>
-        <li class="active">
-          <a href="connexion.jsp">Connexion</a>
-        </li>       
-        <li>
-          <a href="inscription.jsp">Inscription</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+        <%@include file="header.jsp" %>
 <!--------------------------------------------------HEADER--------------------------------------------------->
 
-<div style="margin-top: 150px">
+<div style="margin-top: 100px">
 
     
     
             <%
-         String var ="Bonjour tout le monde !"; 
+
          Collection<Offre> offres = (Collection<Offre>) request.getAttribute("offres");
          
         %>
         
-<%= var %>
+<div id="moncadre" class="col-lg-offset-2 col-lg-8">
 
+    <div class="col-lg-offset-4 col-lg-8" >
         <h2>Liste des offres :</h2>
         
         <% 
         
         for(Offre o : offres) {
         %>
-        
-        <li> <%= o.getTitre() %> <%= var %></li>
 
+        <li> <p> Titre : </p> <%= o.getTitre() %></li>
+        <p> Métier : <%= o.getMetier() %> </p>
+        <p> Contrat :  <%= o.getContrat() %>  </p>
+        <p> Référence :  <%= o.getReference() %> </p>
+        <p> Nombre de poste :  <%= o.getNbr_poste() %> </p>
         <% 
         }
         %>
-          
-</div>
+    </div>
+     </div>
+  </div>
 
-<!--------------------------------------------------FOOTER--------------------------------------------------->
-        <footer class="row">
-            
-        </footer>
+
     </body>
+     </div>
 </html>
