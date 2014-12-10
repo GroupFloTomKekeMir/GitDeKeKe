@@ -290,16 +290,15 @@ public class OffreDAO {
                 String descrProfil = rs.getString("descr_profil");
                 int dureeContrat = rs.getInt("duree_contrat");
                
-                String libelleContrat = rs.getString("c.libelle");
-                String libelleMetier = rs.getString("m.libelle");
-                String nomAnnonceur = rs.getString("a.nom");              
-                String nomDiffuseur = rs.getString("d.nom");              
+                int id_contrat = rs.getInt("id_contrat");
+                int id_annonceur = rs.getInt("id_annonceur");
+                int id_diffuseur = rs.getInt("id_diffuseur");                           
+               // int id_metier = rs.getInt("id_metier");
 
-
-                Contrat contrat = ContratDAO.trouver(cnx, libelleContrat);
-                Metier metier = MetierDAO.trouver(cnx, libelleMetier);
-                Annonceur annonceur = AnnonceursDAO.trouver(cnx, nomAnnonceur);
-                Diffuseur diffuseur = DiffuseursDAO.trouver(cnx, nomDiffuseur);
+                Contrat contrat = ContratDAO.trouver(cnx, id_contrat);
+                Metier metier = MetierDAO.trouver(cnx, id_metier);
+                Annonceur annonceur = AnnonceursDAO.trouver(cnx, id_annonceur);
+                Diffuseur diffuseur = DiffuseursDAO.trouver(cnx, id_diffuseur);
 
                 Offre offre = new Offre(titre, reference, dateDebutPubli, dateFinPubli, nbrPoste, descrPoste, descrProfil, nbrPoste, contrat, annonceur, diffuseur, metier);
                 offre.setId(id);
