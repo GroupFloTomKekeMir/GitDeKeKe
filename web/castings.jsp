@@ -13,45 +13,7 @@
         <title>Castings</title>
     </head>
     <body>
-       <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-        <ul
-      <a href="./" class="navbar-brand">MegaCasting</a>
-    </div>
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav navbar-right"> 
-        <li>
-          <a href="musiques.jsp">Musiquess</a>
-        </li>
-        <li class="active">
-          <a href="evenements.jsp">Evènements</a>
-        </li>
-        <li>
-          <a href="boutique.jsp">Boutique</a>
-        </li>
-        <li class="active">
-          <a href="spectacles.jsp">Spectacles</a>
-        </li>
-        <li>
-          <a href="castings.jsp">Castings</a>
-        </li>
-        <li class="active">
-          <a href="connexion.jsp">Connexion</a>
-        </li>       
-        <li>
-          <a href="inscription.jsp">Inscription</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+       <%@include file="header.jsp" %>
 <!--------------------------------------------------HEADER--------------------------------------------------->
         
 <div class="row">
@@ -63,7 +25,8 @@
         <p>Découvrez toutes les annonces pour les musiciens</p>
         <p>Il y a [x] annonces</p>
         <form method="POST" action="servlet_musiciens">
-        <p><input type="submit" id="submit">En savoir plus</p>
+        <!--<p><input type="submit" id="submit">En savoir plus</p>-->
+        <p><a href="servlet_musiciens" class="btn btn-primary" role="button">En savoir plus</a></p>
         </form>
       </div>
     </div>
