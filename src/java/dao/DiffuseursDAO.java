@@ -27,7 +27,7 @@ public class DiffuseursDAO {
             throw new Exception("'" + diffuseur.getNom() + "' existe déja !");
         }
 
-        AdresseDAO.creer(cnx, diffuseur.getAdresse());
+      //  AdresseDAO.creer(cnx, diffuseur.getAdresse());
 
         Statement stmt = null;
         try{
