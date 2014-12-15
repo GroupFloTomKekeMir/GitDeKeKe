@@ -13,26 +13,22 @@ import entites.Adresse;
 
 public class AdresseDAO {
 	
-    public static void creer(Connection cnx, Adresse adr){
+    public static int creer(Connection cnx,int numero,String rue,int codePostal,String ville){
 
         PreparedStatement pstmt = null;
+        int id =0;
         try{
             pstmt = cnx.prepareStatement("INSERT INTO adresse"
-                + " (numero, rue, code_postal, ville, localisation)"
-                + " VALUES (?, ?, ?, ?)");
+                + " (numero, rue, code_postal, ville)"
+                + " VALUES('" + numero + "', '" + rue + "', '" +  codePostal + "', '" + ville+ "')");
 
-            pstmt.setInt(1, adr.getNumero() );
-            pstmt.setString(2, adr.getRue());
-            pstmt.setInt(3, adr.getCodePostal());
-            pstmt.setString(4, adr.getVille() );
-            pstmt.setString(5, adr.getLocalisation());
 
             pstmt.executeUpdate();
 
             ResultSet rs = pstmt.executeQuery("SELECT MAX(id_adr) FROM adresse");
             if(rs.next()){
-                int id = rs.getInt(1);
-                adr.setId(id);
+                 id = rs.getInt(1); 
+                        
             }
 
             System.out.println("Création réussie.");
@@ -49,6 +45,7 @@ public class AdresseDAO {
                 }
             }
         }
+        return id;
     }	
 
     public static void modifier(Connection cnx, Adresse adr){
