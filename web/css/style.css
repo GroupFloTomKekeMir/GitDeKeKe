@@ -58,6 +58,8 @@ footer {
         -webkit-border-radius:5px;
         -moz-border-radius:5px;
         background-color: #FFFFFF;
+        margin-bottom : 0%;
+        
         }
 
         
@@ -74,3 +76,4 @@ footer {
 body {
     background-color: #DDD;
 }
+

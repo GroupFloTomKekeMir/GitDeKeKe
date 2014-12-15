@@ -13,7 +13,7 @@
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav"> 
                 <li>
-                    <a href="musiques.jsp">Musiques</a>
+                    <a href="servlet_musique">Musiques</a>
                 </li>
                 <li class="active">
                     <a href="evenements.jsp">Evènements</a>
@@ -50,7 +50,7 @@
 
                             }%>
                 <li class="active" style="visibility:  <%= deconnexion%> ">
-                    <a href="#">Deconnexion</a>
+                    <a href="deconnexion.jsp">Deconnexion</a>
                 </li>
                 <li class="active" style="visibility: <%= connexion%>">
                     <a href="inscription.jsp">Inscription</a>

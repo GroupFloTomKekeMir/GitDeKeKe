@@ -91,6 +91,7 @@ public class servlet_connexion extends HttpServlet {
             //
             if(utilisateur == null) { // s'il n'existe pas
                 response.sendRedirect("connexion.jsp");
+                
             } else {   // s'il existe
                 
              

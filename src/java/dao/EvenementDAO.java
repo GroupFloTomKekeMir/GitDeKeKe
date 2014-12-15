@@ -27,7 +27,7 @@ public class EvenementDAO {
             throw new Exception("'" + evenement.getNom() + "' existe déjà !");
         }
 
-        AdresseDAO.creer(cnx, evenement.getAdresse());
+      //  AdresseDAO.creer(cnx, evenement.getAdresse());
         AnnonceursDAO.creer(cnx, evenement.getAnnonceur());
 
         Statement stmt = null;

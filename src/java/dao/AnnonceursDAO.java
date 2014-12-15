@@ -27,7 +27,7 @@ public class AnnonceursDAO {
             throw new Exception("'" + annonceur.getNom() + "' existe déja !");
         }
 
-        AdresseDAO.creer(cnx, annonceur.getAdresse());
+       // AdresseDAO.creer(cnx, annonceur.getAdresse());
 
         Statement stmt = null;
         try{
