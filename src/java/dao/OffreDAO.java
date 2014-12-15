@@ -112,7 +112,7 @@ public class OffreDAO {
 
         return offre;
     }
-    
+ //   
     public static Offre trouver(Connection cnx, int id){
         
         Offre offre = null;
