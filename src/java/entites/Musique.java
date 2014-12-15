@@ -16,7 +16,16 @@ public class Musique {
     private String titre;
     private String description;
     private String genre;
+    private String lien_yt;
     private Utilisateur Utilisateur;
+
+    public Musique(String titre, String description, String genre, String lien_yt, Utilisateur Utilisateur) {
+        this.titre = titre;
+        this.description = description;
+        this.genre = genre;
+        this.lien_yt = lien_yt;
+        this.Utilisateur = Utilisateur;
+    }
 
     public int getId() {
         return id;
@@ -33,7 +42,7 @@ public class Musique {
     public void setTitre(String titre) {
         this.titre = titre;
     }
-    
+
     public String getDescription() {
         return description;
     }
@@ -41,13 +50,21 @@ public class Musique {
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     public String getGenre() {
         return genre;
     }
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getLien_yt() {
+        return lien_yt;
+    }
+
+    public void setLien_yt(String lien_yt) {
+        this.lien_yt = lien_yt;
     }
 
     public Utilisateur getUtilisateur() {
@@ -58,12 +75,7 @@ public class Musique {
         this.Utilisateur = Utilisateur;
     }
 
-    public Musique(String titre, String description, String genre, Utilisateur Utilisateur) {
-        this.titre = titre;
-        this.description = description;
-        this.genre = genre;
-        this.Utilisateur = Utilisateur;
-    }
+
 
     @Override
     public boolean equals(Object obj) {
