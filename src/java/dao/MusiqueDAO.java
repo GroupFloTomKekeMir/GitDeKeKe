@@ -62,7 +62,7 @@ public class MusiqueDAO {
         Statement stmt = null;
         try{			
             stmt = cnx.createStatement();
-            ResultSet rs = stmt.executeQuery("Select id_musique, description, genre "
+            ResultSet rs = stmt.executeQuery("Select id_musique, description, genre,lien_yt "
                     + "From musique m, utilisateur u "
                     + "WHERE m.id_utilisateur = u.id_utilisateur AND titre = '" + titre + "' AND id_utilisateur = '" + idUtil + "';");
             if(rs.next()){
@@ -70,8 +70,9 @@ public class MusiqueDAO {
                 int id = rs.getInt("id_musique");
                 String description = rs.getString("description");
                 String genre = rs.getString("genre");
+                String lien_yt = rs.getString("lien_yt");
 
-                musique = new Musique(titre, description, genre, idUtil);
+                musique = new Musique(titre, description, genre,lien_yt, idUtil);
                 //personne.setAge(age);
                 musique.setId(id);
             }
@@ -99,7 +100,7 @@ public class MusiqueDAO {
         Statement stmt = null;
         try{			
             stmt = cnx.createStatement();
-            ResultSet rs = stmt.executeQuery("Select titre, artiste, description, genre, id_utilisateur From musique WHERE id_musique = '" + id + "';");
+            ResultSet rs = stmt.executeQuery("Select titre, artiste, description, genre,lien_yt, id_utilisateur From musique WHERE id_musique = '" + id + "';");
             if(rs.next()){
                 
                 int idArtiste = rs.getInt("id_utilisateur");
@@ -109,9 +110,10 @@ public class MusiqueDAO {
                 String titre = rs.getString("titre");
                 String description = rs.getString("description");
                 String genre = rs.getString("genre");
+                String lien_yt = rs.getString("lien_yt");
                 
 
-                musique = new Musique(titre, description, genre, utilisateur);
+                musique = new Musique(titre, description, genre,lien_yt, utilisateur);
                 //personne.setAge(age);
                 musique.setId(id);
             }
@@ -194,19 +196,20 @@ public class MusiqueDAO {
         Statement stmt = null;
         try{			
             stmt = cnx.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT id_musique, titre, description, genre, id_utilisateur FROM musique");
+            ResultSet rs = stmt.executeQuery("SELECT id_musique, titre, description, genre,lien_yt, id_utilisateur FROM musique");
             while(rs.next()){
                 int id = rs.getInt("id_musique");
                 String titre = rs.getString("titre");
                 String description = rs.getString("description");
                 String genre = rs.getString("genre");
+                String lien_yt = rs.getString("lien_yt");
                
               
                 int idUtil = rs.getInt("id_utilisateur");
 
                 Utilisateur utilisateur = UtilisateurDAO.trouver(cnx, idUtil);
 
-                Musique musique = new Musique(titre, description, genre, utilisateur);
+                Musique musique = new Musique(titre, description, genre,lien_yt, utilisateur);
                 musique.setId(id);
 
                 liste.add(musique);				
