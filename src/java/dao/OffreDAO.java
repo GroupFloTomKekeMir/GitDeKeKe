@@ -269,7 +269,7 @@ public class OffreDAO {
         }
         return liste;
     }
-    
+    //
         public static ArrayList<Offre> listerParMetier(Connection cnx,int id_metier){
 
         ArrayList<Offre> liste = new ArrayList<>();
