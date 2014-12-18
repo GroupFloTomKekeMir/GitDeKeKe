@@ -228,4 +228,42 @@ public class MusiqueDAO {
         }
         return liste;
     }
+    
+    public static ArrayList<Musique> listerParTitreArtiste(Connection cnx,String titre, String artiste){
+
+        ArrayList<Musique> liste = new ArrayList<>();
+
+        Statement stmt = null;
+        try{			
+            stmt = cnx.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT id_musique , description , genre , lien_yt , id_utilisateur FROM musique INNER JOIN utilisateur on musique.id_utilisateur = utilisateur.id_util WHERE nom_artiste LIKE '%"+ artiste +"%' AND titre LIKE '%" + titre +"%'");
+            while(rs.next()){
+                int id = rs.getInt("id_musique");              
+                String description = rs.getString("description");
+                String genre = rs.getString("genre");
+                String lien_yt = rs.getString("lien_yt");      
+                int idUtil = rs.getInt("id_utilisateur");
+
+                Utilisateur utilisateur = UtilisateurDAO.trouver(cnx, idUtil);
+
+                Musique musique = new Musique(titre, description, genre,lien_yt, utilisateur);
+                musique.setId(id);
+
+                liste.add(musique);				
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+            System.out.println("Echec lister musique");
+        }finally{
+            if(stmt != null){
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return liste;
+    }
+    
 }
