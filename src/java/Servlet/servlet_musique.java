@@ -35,7 +35,6 @@ public class servlet_musique extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -48,44 +47,36 @@ public class servlet_musique extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-                        try {
-			Class.forName("com.mysql.jdbc.Driver");
-                        
-            }
-		
-		catch(ClassNotFoundException ex){
-			ex.printStackTrace();
-		}
-                
-		String url = "jdbc:mysql://localhost/megacasting";
-		Connection cnx = null;
-		try {			
-			cnx = DriverManager.getConnection(url, "root", "");
-			System.out.println("Connexion réussie !");
-                            
 
-           
-            request.setAttribute("musiques",MusiqueDAO.lister(cnx));
-            
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+
+        String url = "jdbc:mysql://localhost/megacasting";
+        Connection cnx = null;
+        try {
+            cnx = DriverManager.getConnection(url, "root", "");
+            System.out.println("Connexion réussie !");
+
+            request.setAttribute("musiques", MusiqueDAO.lister(cnx));
+
             RequestDispatcher rd = request.getRequestDispatcher("musiques.jsp");
             rd.forward(request, response);
-                
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+
+            if (cnx != null) {
+                try {
+                    cnx.close();
+                } catch (SQLException ex) {
+                }
             }
-            catch (Exception ex) 
-            {
-                ex.printStackTrace();
-            }
-            finally{
-        
-        
-                    if(cnx != null){
-                            try{
-                                cnx.close();
-                               }
-                            catch(SQLException ex){  }   
-                    }
-           }
+        }
 
     }
 
@@ -100,6 +91,40 @@ public class servlet_musique extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+
+        String url = "jdbc:mysql://localhost/megacasting";
+        Connection cnx = null;
+        try {
+            cnx = DriverManager.getConnection(url, "root", "");
+            System.out.println("Connexion réussie !");
+
+            String titre = request.getParameter("recherche_titre");  
+            String artiste = request.getParameter("recherche_artiste"); 
+
+            request.setAttribute("musiques", MusiqueDAO.listerParTitreArtiste(cnx, titre, artiste));
+
+            RequestDispatcher rd = request.getRequestDispatcher("musiques.jsp");
+            rd.forward(request, response);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+
+            if (cnx != null) {
+                try {
+                    cnx.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
     }
 
     /**
