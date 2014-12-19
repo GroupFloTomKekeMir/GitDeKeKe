@@ -9,12 +9,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <div 
     <head>
         <meta charset="UTF-8">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <title>Castings</title>
     </head>
+    <div id ="moncadre2">
     <body>
         <%@include file="header.jsp" %>
         <!--------------------------------------------------HEADER--------------------------------------------------->
@@ -30,7 +32,8 @@
                 <div class="row">            
                     <div class="col-lg-2">            
                         <p id="recherche">Recherche  </p>       
-                    </div>         
+                    </div>    
+                    <form method="POST" action="servlet_musique">
                     <div class="col-lg-1">
                         <label for = "recherche_artiste">Artiste </label>                
                     </div>    
@@ -46,6 +49,7 @@
                     <div class="col-lg-offset-2 col-lg-1">
                         <input type="submit" id="submit" name="submit"/>                 
                     </div> 
+                    </form>
                 </div> 
 
 
@@ -96,7 +100,7 @@
     <!--TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT -->                
 
 
-    <div class="row" style="margin-top: 150px;">     
+<!--    <div class="row" style="margin-top: 150px;">     
         <div id="moncadre" class="col-lg-offset-3 col-lg-6">  
             <div class="col-lg-3">
                 <iframe width="250" height="150" src="//www.youtube.com/embed/6ACl8s_tBzE" frameborder="0" allowfullscreen></iframe>
@@ -136,7 +140,7 @@
                 <p><a href="#" class="btn btn-primary" role="button">En savoir plus</a></p>
             </div>
         </div> 
-    </div>
+    </div> -->
 
     <!--------------------------------------------------FOOTER--------------------------------------------------->
     <footer>
@@ -170,4 +174,5 @@
 
     </footer>
 </body>
+    </div>
 </html>
